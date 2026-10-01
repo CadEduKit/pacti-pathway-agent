@@ -1,7 +1,7 @@
 import { DEMO_CANDIDATE, DEMO_PATHWAYS } from "./data";
 import { rankPathways } from "./matching";
 
-const compact = (value: unknown) => JSON.stringify(value).slice(0, 1500);
+const compact = (value: unknown) => JSON.stringify({ dataMode: "fictional-demo", verifiedOpenings: false, data: value });
 
 export function registerPactiTools(onActivity: (message: string) => void) {
   if (!document.modelContext) {
@@ -81,3 +81,4 @@ export function registerPactiTools(onActivity: (message: string) => void) {
   onActivity("Four PACTI WebMCP tools registered.");
   return () => controller.abort();
 }
+
