@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "test": "vitest run",
-    "typecheck": "tsc -b"
+    "typecheck": "tsc -b",
+    "server": "node --env-file-if-exists=.env server/index.mjs",
+    "test:server": "node --test server/*.node-test.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^5.0.4",
@@ -23,5 +25,7 @@
     "@types/react-dom": "^19.2.0",
     "vitest": "^4.1.9"
   },
-  "engines": { "node": ">=22.12.0 <25" }
+  "engines": {
+    "node": ">=22.12.0 <25"
+  }
 }
